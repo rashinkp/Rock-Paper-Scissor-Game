@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rock Paper Scissor</title>
+</head>
+<link rel="stylesheet" href="style.css">
+<body>
+
+
+  <h1 class="title-game">Rock Papper Scissor</h1>
+
+  <!-- all the choice parts -->
+  <button class="choice-button" onclick="playGame('Rock')">
+    <img class="move-image" src="https://supersimple.dev/projects/rock-paper-scissors/images/rock-emoji.png" alt="">
+  </button>
+  <button class="choice-button" onclick="playGame('Paper')">
+    <img class="move-image" src="https://supersimple.dev/projects/rock-paper-scissors/images/paper-emoji.png" alt="">
+  </button>
+  <button class="choice-button" onclick="playGame('Scissors')">
+    <img class="move-image" src="https://supersimple.dev/projects/rock-paper-scissors/images/scissors-emoji.png" alt="">
+  </button>
+
+  <!-- chice parts ends here -->
+  
+  <!-- result popups -->
+  <p class="current-status"></p>
+  <p class="choices other-results"></p>
+  <h2 class="result"></h2>
+
+  <!-- resete button -->
+  <button class="reset-score-button" onclick="resetScore()">Reset Score</button>
+
+
+  <script src="script.js">
+  </script>
+</body>
+
+
+</html>
