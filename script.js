@@ -52,8 +52,6 @@ function playGame(ourChoice) {
   let choiceElement = document.querySelector('.choices');
   computerSelection = computerSelection.toLowerCase();
   ourChoice = ourChoice.toLowerCase();
-  console.log(computerSelection);
-  console.log(ourChoice)
   statusElement.innerHTML = `${result}`;
   choiceElement.innerHTML = `You
     <img class="move-image" src="https://supersimple.dev/projects/rock-paper-scissors/images/${ourChoice}-emoji.png" alt=""> 
@@ -118,3 +116,24 @@ function resetScore() {
   Losses:${score.Losses}`;
 }
 
+//auto play section
+let autoPlayStatus = false;
+let intervalId;
+function autoPlay() {
+  let autoPlayButton = document.querySelector('.auto-play-button');
+  if(!autoPlayStatus) {
+      intervalId = setInterval(function() {
+      let yourChoice = randomSelection();
+      playGame(yourChoice);
+    },1000)
+    autoPlayButton.innerHTML = 'Stop Auto Play'
+    autoPlayButton.style.background = 'red';
+    autoPlayStatus = true;
+  } else {
+    clearInterval(intervalId);
+    autoPlayButton.innerHTML = 'Auto Play'
+    autoPlayButton.style.background = 'green'
+    autoPlayStatus = false;
+  }
+  
+}
