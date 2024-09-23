@@ -122,7 +122,7 @@ let intervalId;
 function autoPlay() {
   let autoPlayButton = document.querySelector('.auto-play-button');
   if(!autoPlayStatus) {
-      intervalId = setInterval(function() {
+      intervalId = setInterval(()=> {
       let yourChoice = randomSelection();
       playGame(yourChoice);
     },1000)
